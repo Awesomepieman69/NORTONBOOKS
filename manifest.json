@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Norton Ebook Auto-Solver",
+  "version": "2.0.0",
+  "description": "Automatically answers 'Check Your Understanding' questions on the Norton Ebook Reader.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.wwnorton.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.wwnorton.com/*"
+      ],
+      "js": [
+        "shadow-patch.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "*://*.wwnorton.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "options_page": "options.html"
+}

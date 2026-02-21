@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Norton Auto-Solver – Settings</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: #1a1a2e;
+      color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #16213e;
+      border: 1px solid #0f3460;
+      border-radius: 16px;
+      padding: 36px 40px;
+      width: 420px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .45);
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #e94560;
+    }
+
+    p.sub {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #ccc;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #0f3460;
+      border-radius: 8px;
+      background: #1a1a2e;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    input[type="password"]:focus {
+      border-color: #e94560;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 11px 0;
+      border: none;
+      border-radius: 8px;
+      background: #e94560;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    button:hover { background: #c73650; }
+
+    .toast {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 13px;
+      color: #53d769;
+      min-height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🤖 Norton Auto-Solver</h1>
+    <p class="sub">Enter your OpenAI API key below. It is stored locally in your browser.</p>
+
+    <label for="apiKey">OpenAI API Key</label>
+    <input type="password" id="apiKey" placeholder="sk-..." />
+
+    <button id="saveBtn">Save Key</button>
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
